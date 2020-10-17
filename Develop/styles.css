@@ -1,0 +1,41 @@
+/* Setting background image */
+
+body {
+    background-image: url(https://images.unsplash.com/photo-1484506097116-1bcba4fa7568?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60);
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Insures entire element is always covered */
+    background-size: cover;
+    padding: 20px;
+}
+
+/* Centering main body for quiz and setting background to white */
+.col-md-8 {
+    background: white;
+    margin: 0 auto;
+    padding-top: 15px;
+    padding-bottom: 30px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
+/* Aligning View Highscores to the left */
+.alignleft {
+    float: left;
+    width: 50%;
+}
+
+/* Aligning Timer to the righ */
+.alignright {
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+
+/* Centering section for quiz content */
+.aligncenter {
+    display: flex;
+    justify-content: center;
+    margin-right: 80px;
+    margin-left: 80px;
+    text-align: center;
+}
