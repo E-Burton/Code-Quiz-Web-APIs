@@ -38,3 +38,4 @@ THEN I can save my initials and score
 
 ## Additional Resources Used for Finished Project
 
+[Centering Content](https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/)
