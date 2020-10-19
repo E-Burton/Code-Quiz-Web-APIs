@@ -47,3 +47,5 @@ THEN I can save my initials and score
 [Display Buttons on New Line in JS](https://stackoverflow.com/questions/49316935/how-to-get-the-buttons-to-the-next-line-in-javascript)
 
 [Displaying Quiz Questions One at Time](https://stackoverflow.com/questions/43502831/displaying-one-quiz-item-at-a-time)
+
+[Delay Function Call](https://stackoverflow.com/questions/4738595/how-do-i-delay-a-function-call-for-5-seconds)

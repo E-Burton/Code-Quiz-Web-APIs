@@ -18,14 +18,15 @@ var questions = [
     {q: "Using a(n) ________ statement is how you test for a specific condition.", 
      c: ["select", "for", "switch", "if"], 
      a: "if"},
-     {q: "What is meant by the 'this' keyword?", 
-      c: ["It is a variable which contains value", "It refers to the previous object", "It refers to the current object", "None of the above"], 
-      a: "It refers to the current object"}
+    {q: "What is meant by the 'this' keyword?", 
+     c: ["It is a variable which contains value", "It refers to the previous object", "It refers to the current object", "None of the above"], 
+     a: "It refers to the current object"}
 ]
 
 var timeLeft = questions.length * 15;
 var currentIndex = 0;
 var score = 0;
+var finishedQuiz = false;
 
 // Adding event lister to 'Start Quiz' button and executing startQuiz() on click
 start.addEventListener("click", startQuiz);
@@ -93,11 +94,39 @@ function nextQuestion() {
         currentIndex += 1;
         startQuestions();
     } else {
+        finishedQuiz = true;
         quizEnded(); // If all questions have been displayed call quizEnded function
     }
 }
 
-console.log("The user's current score is: " + score);
+// Stop displaying questions and show quiz results
+function quizEnded() {
+    timerEl.textContent = ""; // Setting content of timer element to an empty string
+    timerEl.style.visibility = "hidden"; // Hidding timer element
+    if (finishedQuiz === true) {
+        quizTitle.textContent = "You've finished!"; // Display if all questions were answered
+    } else {
+        quizTitle.textContent = "Time is Up!"; // Display if time ran out before all questions were answered
+    }
+    // Displaying quiz results
+    choiceTag.textContent = "You scored " + score + " points. Good Job! Enter your intials to save your highscore.";
+    // Creating <p> tag to hold input for user initials and button to submit/save user's highscore
+    var highScoreEl= document.createElement("p");
+    var userInitials = document.createElement("input"); // Creating input for user's initials
+    var submitHighScore = document.createElement("button"); // Creatting submit button for user intials & highscore
+    // Setting styling and attributes for <p>, <input>, and <button> tags
+    highScoreEl.style.marginTop = "15px";
+    userInitials.style.width = "30%";
+    userInitials.style.marginBottom = "15px";
+    userInitials.setAttribute("class", "form-control");
+    userInitials.setAttribute("placeholder", "Enter Initials");
+    submitHighScore.setAttribute("class", "btn btn-success");
+    submitHighScore.setAttribute("id", "button-addon2");
+    submitHighScore.textContent = "Submit"; // Setting text content for button
+    highScoreEl.appendChild(userInitials); // Appending <input> to <p> tag
+    highScoreEl.appendChild(submitHighScore); // Appending <button> to <p> tag
+    choiceTag.appendChild(highScoreEl); // Appending <p> tag to HTML document
+}
 
 // STILL NEED TO COMPLETE:
 // write quizended() function
