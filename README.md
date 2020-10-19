@@ -41,3 +41,9 @@ THEN I can save my initials and score
 [Centering Content](https://www.freecodecamp.org/news/how-to-center-anything-with-css-align-a-div-text-and-more/)
 
 [Top JavaScript Multiple Choice Questions](https://codeexercise.com/50-top-javascript-multiple-choice-questions-and-answers/)
+
+[Style Visibility Property](https://www.w3schools.com/jsref/prop_style_visibility.asp)
+
+[Display Buttons on New Line in JS](https://stackoverflow.com/questions/49316935/how-to-get-the-buttons-to-the-next-line-in-javascript)
+
+[Displaying Quiz Questions One at Time](https://stackoverflow.com/questions/43502831/displaying-one-quiz-item-at-a-time)

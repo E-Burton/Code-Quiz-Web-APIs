@@ -21,21 +21,32 @@ body {
 /* Aligning View Highscores to the left */
 .alignleft {
     float: left;
-    width: 50%;
+    width: 88%;
 }
 
-/* Aligning Timer to the righ */
+/* Aligning Timer to the right and centering text */
 .alignright {
     float: right;
-    text-align: right;
-    width: 50%;
+    text-align: center;
+    width: 12%;
+    background-color: yellow;
+    border: 1px solid black;
 }
 
-/* Centering section for quiz content */
+/* Centering section for start page */
 .aligncenter {
     display: flex;
     justify-content: center;
     margin-right: 80px;
     margin-left: 80px;
     text-align: center;
+}
+
+/* Aligning quiz content */
+.question-align {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    margin-right: 80px;
+    margin-left: 80px;
 }
