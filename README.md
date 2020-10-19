@@ -30,6 +30,10 @@ THEN I can save my initials and score
 
 ## Concept Mock-Up
 
+## Tools Implemented
+
+* Boostrap, CSS, and Javascript
+
 ## Challenges
 
 ## Link to Website

@@ -27,6 +27,10 @@ var timeLeft = questions.length * 15;
 var currentIndex = 0;
 var score = 0;
 var finishedQuiz = false;
+var userHighscore = 0;
+var storedInitials = "";
+localStorage.setItem("userHighscore", 0);
+localStorage.setItem("storedIntials", "");
 
 // Adding event lister to 'Start Quiz' button and executing startQuiz() on click
 start.addEventListener("click", startQuiz);
@@ -74,7 +78,7 @@ function startQuestions() {
                 evaluation.textContent = "Correct!";
                 choiceTag.appendChild(document.createElement("hr")); // Creating and appending horizontal line between choiceButton's and evaulation <p> tag
                 choiceTag.appendChild(evaluation); // Appending evulation <p> tag to HTML document
-                score += 1; // Increment score by 1 point if user's answer matches correct answer
+                score += 2; // Increment score by 2 points if user's answer matches correct answer
                 setTimeout(nextQuestion, 1000); // Call nextQuestion function after 1 second
             } else {
                 evaluation.textContent = "Incorrect.";
@@ -126,11 +130,16 @@ function quizEnded() {
     highScoreEl.appendChild(userInitials); // Appending <input> to <p> tag
     highScoreEl.appendChild(submitHighScore); // Appending <button> to <p> tag
     choiceTag.appendChild(highScoreEl); // Appending <p> tag to HTML document
+    // Call addHighscore when submit button is clicked
+    submitHighScore.onclick = function addHighscore () {
+        localStorage.setItem("userHighscore", score); // Store user score in local storage
+        localStorage.setItem("storedInitials", userInitials.value); // Store user initials in local storage
+        window.location.href="./Develop/highscores.html"; // Go to highscores html when submit button is clicked
+    }
 }
 
 // STILL NEED TO COMPLETE:
-// write quizended() function
-// store score in local storage (need set item and get item for this)
-// create highscorces html file
+// display userInitials and score in highscores.html
+// code to clear highscores on button click
 
 

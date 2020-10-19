@@ -18,6 +18,9 @@ body {
     padding-left: 50px;
 }
 
+/* ----------------------------------------------- */
+/* Specific styling for index.html */
+
 /* Aligning View Highscores to the left */
 .alignleft {
     float: left;
@@ -42,11 +45,24 @@ body {
     text-align: center;
 }
 
-/* Aligning quiz content */
-.question-align {
+/* Aligning content for quiz (index.html) & highscores (highscores.html) */
+.question-align, .scores-align {
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
     margin-right: 80px;
     margin-left: 80px;
+}
+
+/* ----------------------------------------------- */
+/* Specific styling for highscores.html */
+
+/* Adding margin to bottom of div element */
+.scores-align div {
+    margin-bottom: 20px;
+}
+
+/* Adding margin to right of buttons  */
+.scores-align button {
+    margin-right: 8px;
 }
