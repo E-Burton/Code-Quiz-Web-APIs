@@ -30,6 +30,9 @@ THEN I can save my initials and score
 
 ## Concept Mock-Up
 
+The following animation demonstrates the application functionality:
+
+![code quiz](./Assets/Quiz-Demo.gif)
 
 ## Tools Implemented
 
@@ -64,4 +67,6 @@ THEN I can save my initials and score
 [Sorting Object Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
 
 [Clear Local Storage](https://www.w3schools.com/jsref/met_storage_clear.asp)
+
+[Video to GIF Converter](https://ezgif.com/video-to-gif)
 
