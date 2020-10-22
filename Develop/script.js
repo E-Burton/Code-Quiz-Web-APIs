@@ -4,6 +4,7 @@ var start = document.getElementById("start");
 var quizTitle = document.getElementById("question-title");
 var choiceTag = document.getElementById("choices");
 var timerEl = document.getElementById("timer");
+var viewHighscores = document.getElementById("go-to-highscores");
 
 var questions = [
     {q: "Inside which HTML element do we put our JavaScript?",
@@ -12,7 +13,7 @@ var questions = [
     {q: "What is the correct syntax for referring to an external script called 'abc.js'?",
      c: ["<script href='abc.js'>", "<script src='abc.js'>", "<script name='abc.js'>", "None of the above"],
      a: "<script src='abc.js'>"},
-    {q: "Which of the following best decribes JavaScript", 
+    {q: "Which of the following best decribes JavaScript?", 
      c: ["An object-oriented scripting language.", "A compiled scripting language.", "A scripting language precompiled in the browser.", "A low-level programming language."],
      a: "An object-oriented scripting language."},
     {q: "Using a(n) ________ statement is how you test for a specific condition.", 
@@ -27,12 +28,8 @@ var timeLeft = questions.length * 15;
 var currentIndex = 0;
 var score = 0;
 var finishedQuiz = false;
-var userHighscore = 0;
-var storedInitials = "";
-localStorage.setItem("userHighscore", 0);
-localStorage.setItem("storedIntials", "");
 
-// Adding event lister to 'Start Quiz' button and executing startQuiz() on click
+// Adding event lister to 'Start Quiz' button and execute startQuiz() when clicked
 start.addEventListener("click", startQuiz);
 
 // Starting quiz - calling startQuestions and timerClock functions and hiding 'Start Quiz' button
@@ -75,13 +72,13 @@ function startQuestions() {
         choiceButton.onclick = function answerEval() {
             var evaluation = document.createElement("p"); // Creating <p> tag
             if (questions[currentIndex].c[i] === questions[currentIndex].a) {
-                evaluation.textContent = "Correct!";
+                evaluation.textContent = "Correct! 😃";
                 choiceTag.appendChild(document.createElement("hr")); // Creating and appending horizontal line between choiceButton's and evaulation <p> tag
                 choiceTag.appendChild(evaluation); // Appending evulation <p> tag to HTML document
                 score += 2; // Increment score by 2 points if user's answer matches correct answer
                 setTimeout(nextQuestion, 1000); // Call nextQuestion function after 1 second
             } else {
-                evaluation.textContent = "Incorrect.";
+                evaluation.textContent = "Incorrect 😔.";
                 choiceTag.appendChild(document.createElement("hr"));
                 choiceTag.appendChild(evaluation);
                 timeLeft -= 10; // Decrement timeLeft by 10 seconds if user's answer is incorrect
@@ -98,7 +95,7 @@ function nextQuestion() {
         currentIndex += 1;
         startQuestions();
     } else {
-        finishedQuiz = true;
+        finishedQuiz = true; 
         quizEnded(); // If all questions have been displayed call quizEnded function
     }
 }
@@ -115,12 +112,12 @@ function quizEnded() {
     // Displaying quiz results
     choiceTag.textContent = "You scored " + score + " points. Good Job! Enter your intials to save your highscore.";
     // Creating <p> tag to hold input for user initials and button to submit/save user's highscore
-    var highScoreEl= document.createElement("p");
+    var highScoreEl = document.createElement("p");
     var userInitials = document.createElement("input"); // Creating input for user's initials
     var submitHighScore = document.createElement("button"); // Creatting submit button for user intials & highscore
     // Setting styling and attributes for <p>, <input>, and <button> tags
     highScoreEl.style.marginTop = "15px";
-    userInitials.style.width = "30%";
+    userInitials.style.width = "60%";
     userInitials.style.marginBottom = "15px";
     userInitials.setAttribute("class", "form-control");
     userInitials.setAttribute("placeholder", "Enter Initials");
@@ -132,14 +129,21 @@ function quizEnded() {
     choiceTag.appendChild(highScoreEl); // Appending <p> tag to HTML document
     // Call addHighscore when submit button is clicked
     submitHighScore.onclick = function addHighscore () {
-        localStorage.setItem("userHighscore", score); // Store user score in local storage
-        localStorage.setItem("storedInitials", userInitials.value); // Store user initials in local storage
+        // Parse any JSON previously stored in allEntries
+        var existingEntries = JSON.parse(localStorage.getItem("allEntries"));
+        if(existingEntries === null) existingEntries = []; 
+        var entryInitials = userInitials.value;
+        var entryScore = score;
+        var highscoreEntry = {
+            User: entryInitials,
+            Score: entryScore
+        };
+        localStorage.setItem("highscoreEntry", JSON.stringify(highscoreEntry));
+        // Save allEntries back to local storage
+        existingEntries.push(highscoreEntry);
+        localStorage.setItem("allEntries", JSON.stringify(existingEntries));
         window.location.href="./Develop/highscores.html"; // Go to highscores html when submit button is clicked
     }
 }
-
-// STILL NEED TO COMPLETE:
-// display userInitials and score in highscores.html
-// code to clear highscores on button click
 
 

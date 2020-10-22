@@ -30,11 +30,12 @@ THEN I can save my initials and score
 
 ## Concept Mock-Up
 
+
 ## Tools Implemented
 
 * Boostrap, CSS, and Javascript
 
-## Challenges
+* [Emojipedia](https://emojipedia.org/)
 
 ## Link to Website
 
@@ -52,4 +53,15 @@ THEN I can save my initials and score
 
 [Displaying Quiz Questions One at Time](https://stackoverflow.com/questions/43502831/displaying-one-quiz-item-at-a-time)
 
+[Using Emojis in HTML, CSS, and JavaScript](https://www.kirupa.com/html5/emoji.htm)
+
 [Delay Function Call](https://stackoverflow.com/questions/4738595/how-do-i-delay-a-function-call-for-5-seconds)
+
+[Create Link that Looks Like a Button](https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link)
+
+[Adding Objects to Array in Javascript](https://stackoverflow.com/questions/19635077/adding-objects-to-array-in-localstorage#:~:text=You%20need%20to%20use%20getItem,%3D%20%5B%5D%3B%20var%20entryTitle%20%3D%20document.)
+
+[Sorting Object Arrays](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort)
+
+[Clear Local Storage](https://www.w3schools.com/jsref/met_storage_clear.asp)
+

@@ -24,14 +24,14 @@ body {
 /* Aligning View Highscores to the left */
 .alignleft {
     float: left;
-    width: 88%;
+    width: 80%;
 }
 
 /* Aligning Timer to the right and centering text */
 .alignright {
     float: right;
     text-align: center;
-    width: 12%;
+    width: 20%;
     background-color: yellow;
     border: 1px solid black;
 }
@@ -65,4 +65,38 @@ body {
 /* Adding margin to right of buttons  */
 .scores-align button {
     margin-right: 8px;
+    margin-bottom: 8px;
 }
+
+/* ---------------------------------------------------------------- */
+/* Devices 500px and down; ensuring Timer Clock stays on one line */
+@media only screen and (max-width: 505px) {
+    .alignleft {
+        float: left;
+        width: 60%;
+    }
+    
+    .alignright {
+        float: left;
+        text-align: center;
+        width: 40%;
+        background-color: yellow;
+        border: 1px solid black;
+    }
+  }
+
+/* Devices between 500px and up; ensuring Timer clock stays on one line */
+@media only screen and (min-width: 505px) {
+    .alignleft {
+        float: left;
+        width: 75%;
+    }
+    
+    .alignright {
+        float: right;
+        text-align: center;
+        width: 25%;
+        background-color: yellow;
+        border: 1px solid black;
+    }
+  }
